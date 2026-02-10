@@ -154,7 +154,7 @@ RunService.RenderStepped:Connect(function()
     FOVCircle.Radius = getgenv().Config.FOV
     FOVCircle.Position = Vector2.new(Camera.ViewportSize.X/2, Camera.ViewportSize.Y/2)
 
--- Aimbot Suave/Rage
+    -- Aimbot Suave/Rage
     if getgenv().Config.Aimbot then
         local t = GetTarget()
         if t and UIS:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) then
@@ -169,23 +169,23 @@ RunService.RenderStepped:Connect(function()
         end
     end
 
- -- ESP, Hitbox e Movimento
+    -- ESP, Hitbox e Movimento
     if LP.Character and LP.Character:FindFirstChild("Humanoid") then
         LP.Character.Humanoid.WalkSpeed = getgenv().Config.Speed
 
-  -- Fly
+        -- Fly
         if getgenv().Config.Fly then
             LP.Character.HumanoidRootPart.Velocity = Vector3.new(0, 1.5, 0)
         end
 
-  -- Noclip
+        -- Noclip
         if getgenv().Config.Noclip then
             for _, v in pairs(LP.Character:GetDescendants()) do
                 if v:IsA("BasePart") then v.CanCollide = false end
             end
         end
 
-   -- Loop Jogadores
+        -- Loop Jogadores
         for _, p in pairs(Players:GetPlayers()) do
             if p ~= LP and p.Character and p.Character:FindFirstChild("Humanoid") then
                 -- Hitbox
@@ -194,7 +194,8 @@ RunService.RenderStepped:Connect(function()
                     hrp.Size = Vector3.new(getgenv().Config.HitboxSize, getgenv().Config.HitboxSize, getgenv().Config.HitboxSize)
                     hrp.Transparency = (getgenv().Config.HitboxSize > 2) and 0.7 or 1
                 end
-    -- ESP
+
+                -- ESP
                 local h = p.Character:FindFirstChild("Haxwx_ESP")
                 if getgenv().Config.ESP_Box and not getgenv().Config.StreamerMode then
                     if not h then h = Instance.new("Highlight", p.Character); h.Name = "Haxwx_ESP"; h.FillTransparency = 1 end
