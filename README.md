@@ -1,5 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/me2v/Scripts-roblox/refs/heads/main/README.md"))()
-
 -- [[ CARREGAMENTO DA RAYFIELD ]]
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
